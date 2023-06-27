@@ -1,0 +1,14 @@
+{
+	"version": "1.0.0",
+	"name": "abc",
+	"description": "ABC Theme - Atlantis Blesta Client.",
+	"authors": [
+		{
+			"name": "Mas ALI.",
+			"url": "http://www.waliweb.com"
+		}
+	],
+	"require": {
+		"blesta": ">=5.0.0"
+	}
+}
