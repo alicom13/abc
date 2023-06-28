@@ -59,24 +59,21 @@ $html_lang = (!empty($language) ? substr($language, 0, 2) : 'en');
 	<div class="wrapper sidebar_minimize">
 		<div class="main-header">
 			<!-- Logo Header -->
-			<div class="logo-header" data-background-color="red">
-				
+			<div class="logo-header" data-background-color="red">			
 				<a href="<?php echo $this->Html->safe($this->base_uri);?>" class="logo">
-                    <!-- WaliWEB.com | Logo -->
-                    
-                        <?php
-                        if (!empty($theme_logo)) {
-                        ?>
-                            <img src="<?php (print (isset($theme_logo) ? $this->Html->safe($theme_logo) : null));?>" alt="<?php echo (isset($system_company->name) ? $system_company->name : null); ?>" class="navbar-brand" />
-                        <?php
-                        } else {
-                        ?>
-                            <img src="<?php echo $this->view_dir;?>atlantis/img/logo.svg" alt="navbar brand" class="navbar-brand">
-                        <?php
-                        }
-                        ?>
-                    <!-- WaliWEB.com | Logo /-->
-                    
+				<!-- WaliWEB.com | Logo -->
+					<?php
+					if (!empty($theme_logo)) {
+					?>
+						<img src="<?php (print (isset($theme_logo) ? $this->Html->safe($theme_logo) : null));?>" alt="<?php echo (isset($system_company->name) ? $system_company->name : null); ?>" class="navbar-brand" />
+					<?php
+					} else {
+					?>
+						<img src="<?php echo $this->view_dir;?>atlantis/img/logo.svg" alt="navbar brand" class="navbar-brand">
+					<?php
+					}
+					?>
+				<!-- WaliWEB.com | Logo /-->
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -111,23 +108,22 @@ $html_lang = (!empty($language) ? substr($language, 0, 2) : 'en');
 					</div>
 					
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-                    <?php
-                    	if ($this->Html->ifSet($staff_as_client)) {
-                        // Jika Admin login sebagai user atau Admin kunjungi halaman depan tanpa login sebagai user
-                        // Maka kasih tombol balik kucing ke Admin Area | WaliWEB.com
-                    ?>
+					<?php
+						if ($this->Html->ifSet($staff_as_client)) {
+						// Jika Admin login sebagai user atau Admin kunjungi halaman depan tanpa login sebagai user
+						// Maka kasih tombol balik kucing ke Admin Area | WaliWEB.com
+					?>
 					    <li class="nav-item">
 						    <a href="<?php echo $this->Html->safe($this->admin_uri . 'clients/logoutasclient/');?>" class="btn btn-xs btn-warning btn-round mr-0">
 						        <i class="flaticon-back"></i>
 						         <?php $this->_('AppController.client_structure.staff_as_client_note');?>
 						    </a>
 						</li>
-                        
-                    <?php
-                    	} elseif ($this->Html->ifSet($logged_in)) {
-                    	// if ((isset($logged_in) ? $logged_in : null)) {
-                        // Jika yang Login adalah User | WaliWEB.com
-                        ?>
+					<?php
+						} elseif ($this->Html->ifSet($logged_in)) {
+						// if ((isset($logged_in) ? $logged_in : null)) {
+						// Jika yang Login adalah User | WaliWEB.com
+						?>
 					    <li class="nav-item">
 						    <a href="<?php echo $this->Html->safe(WEBDIR);?>order/" class="btn btn-xs btn-warning btn-round mr-0">
 						        <i class="flaticon-cart"></i>
@@ -152,48 +148,16 @@ $html_lang = (!empty($language) ? substr($language, 0, 2) : 'en');
 						         <?php $this->_('AppController.client_structure.text_logout');?>
 						    </a>
 						</li>
-                        <?php } else {
-                        	// Jika User tidak ada yang Login sama sekali | WaliWEB.com
-                            ?>
+						<?php } else {
+							// Jika User tidak ada yang Login sama sekali | WaliWEB.com
+							?>
 						<li class="nav-item">
 						    <a href="<?php echo $this->Html->safe($this->client_uri . 'login/');?>" class="btn btn-xs btn-warning btn-round mr-0">
 						        <i class="flaticon-power"></i>
 						         <?php $this->_('AppController.client_structure.text_login');?>
 						    </a>
 						</li>
-                        <?php } ?>
-						<!--
-						<li class="nav-item dropdown hidden-caret">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
-								<div class="avatar-sm">
-									<img src="<?php //echo $this->view_dir;?>atlantis/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
-								</div>
-							</a>
-							<ul class="dropdown-menu dropdown-user animated fadeIn">
-								<div class="dropdown-user-scroll scrollbar-outer">
-									<li>
-										<div class="user-box">
-											<div class="avatar-lg"><img src="<?php //echo $this->view_dir;?>atlantis/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
-											<div class="u-text">
-												<h4>Hizrian</h4>
-												<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">My Profile</a>
-										<a class="dropdown-item" href="#">My Balance</a>
-										<a class="dropdown-item" href="#">Inbox</a>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">Account Setting</a>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">Logout</a>
-									</li>
-								</div>
-							</ul>
-						</li>
-						-->
+						<?php } ?>
 					</ul>
 				</div>
 			</nav>
@@ -299,8 +263,7 @@ $html_lang = (!empty($language) ? substr($language, 0, 2) : 'en');
 					</div>
 				
 				<!-- WaliWEB.com | /User Profile -->
-				
-				
+					<!--
 					<ul class="nav nav-primary">
 						<li class="nav-item">
 							<a data-toggle="collapse" href="#AddService" class="collapsed" aria-expanded="false">
@@ -329,6 +292,7 @@ $html_lang = (!empty($language) ? substr($language, 0, 2) : 'en');
 							</div>
 						</li>
 					</ul>
+					-->
                     <!--WaliWEB.com | Navigasi menu-->
                     
 
@@ -409,7 +373,7 @@ $html_lang = (!empty($language) ? substr($language, 0, 2) : 'en');
                     <div>
                       <ul class="nav" style="position: fixed;left: 0px;bottom: 0px;z-index: -1;">
                           <li class="nav-item">
-                              <a target="_blank" href="https://account.blesta.com/order/forms/a/MzYyNDE=" style:"background:none;">
+                              <a target="_blank" href="https://account.blesta.com/order/forms/a/MzYyNDE=" style="background:none;">
                                   <i><img src="https://www.blesta.com/favicon.ico" alt="Blesta Software"></i>
                                   <p>Blesta</p>
                               </a>
@@ -428,9 +392,6 @@ $html_lang = (!empty($language) ? substr($language, 0, 2) : 'en');
 						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
 							<div>
 								<h2 class="text-white pb-2 fw-bold"><?php echo ((isset($title) ? $title : null) ? (isset($title) ? $this->Html->safe($title) : null) : $this->_('AppController.client_structure.default_title', true));?></h2>
-							    <!--
-								<h5 class="text-white op-7 mb-2">Premium Bootstrap 4 Admin Dashboard</h5>
-								-->
 							</div>
 							<div class="ml-md-auto py-2 py-md-0">
                             <!--WaliWEB.com | Bahasa-->
@@ -472,42 +433,42 @@ $html_lang = (!empty($language) ? substr($language, 0, 2) : 'en');
 					</div>
 				</div>
 				<div class="page-inner mt--5">
-<!--/WaliWEB.com | ABC Theme Content -->
-        <!-- Begin Content -->
-            <div class="row<?php echo (!(isset($show_header) ? $show_header : true) ? ' login' : '');?>">
-                <?php
-                if (!empty($active_nav['secondary'])) {
-                ?>
-                    <div class="col-md-3">
-                        <div class="list-group">
-                            <?php
-                            foreach ($active_nav['secondary'] as $link => $value) {
-                                $link = $this->Html->safe((isset($link) ? $link : ''));
-                                $prefix = !str_contains($link, '://') ? (isset($this->base_uri) ? $this->Html->safe($this->base_uri) : null) : '';
-                            ?>
-                                <a href="<?php echo $prefix . $link;?>" class="list-group-item list-group-item-action <?php echo ($value['active'] ? 'active' : '');?>">
-                                    <i class="<?php (print (isset($value['icon']) ? $this->Html->safe($value['icon']) : null));?> fa-fw"></i>
-                                    <?php
-                                    (print (isset($value['name']) ? $this->Html->safe($value['name']) : null));
-                                    ?>
-                                </a>
-                            <?php
-                            }
-                            ?>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="row">
-                            <?php echo $content;?>
-                        </div>
-                    </div>
-                <?php
-                } else {
-                    echo $content;
-                }
-                ?>
-            </div>
-<!--WaliWEB.com | ABC Theme Content /-->
+		<!--/WaliWEB.com | ABC Theme Content -->
+				<!-- Begin Content -->
+					<div class="row<?php echo (!(isset($show_header) ? $show_header : true) ? ' login' : '');?>">
+						<?php
+						if (!empty($active_nav['secondary'])) {
+						?>
+							<div class="col-md-3">
+								<div class="list-group">
+									<?php
+									foreach ($active_nav['secondary'] as $link => $value) {
+										$link = $this->Html->safe((isset($link) ? $link : ''));
+										$prefix = !str_contains($link, '://') ? (isset($this->base_uri) ? $this->Html->safe($this->base_uri) : null) : '';
+									?>
+										<a href="<?php echo $prefix . $link;?>" class="list-group-item list-group-item-action <?php echo ($value['active'] ? 'active' : '');?>">
+											<i class="<?php (print (isset($value['icon']) ? $this->Html->safe($value['icon']) : null));?> fa-fw"></i>
+											<?php
+											(print (isset($value['name']) ? $this->Html->safe($value['name']) : null));
+											?>
+										</a>
+									<?php
+									}
+									?>
+								</div>
+							</div>
+							<div class="col-md-9">
+								<div class="row">
+									<?php echo $content;?>
+								</div>
+							</div>
+						<?php
+						} else {
+							echo $content;
+						}
+						?>
+					</div>
+		<!--WaliWEB.com | ABC Theme Content /-->
 				</div>
 			</div>
 			<footer class="footer" style="display:absolute">
@@ -538,7 +499,6 @@ $html_lang = (!empty($language) ? substr($language, 0, 2) : 'en');
 			</footer>
 		</div>
 	</div>
-    
     
         <div class="modal fade" id="global_modal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
