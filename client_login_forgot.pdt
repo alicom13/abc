@@ -1,14 +1,12 @@
-
+    <div class="col"></div>
     <div class="col-md-4 col-sm-6 col-md-offset-1">
-        <h2><i class="fas fa-lock"></i> <?php (print (isset($company->name) ? $this->Html->safe($company->name) : null));?></h2>
-        <h4><?php $this->_('ClientLogin.forgot.reset_heading');?></h4>
-        <p><?php $this->_('ClientLogin.forgot.description');?></p>
-        <hr />
-    </div>
-    <div class="col-md-4 col-sm-6 col-md-offset-1">
-        <div class="panel panel-blesta">
+        <div class="card panel-blesta">
             <div class="card-content">
-                <div class="panel-body">
+                <div class="card-header">
+                    <h4 class="card-title"><?php $this->_('ClientLogin.forgot.reset_heading');?></h4>
+                    <p><?php $this->_('ClientLogin.forgot.description');?></p>
+                </div>
+                <div class="card-body">
                     <?php echo (isset($message) ? $message : null);?>
 
                     <?php
@@ -44,7 +42,7 @@
             </div>
         </div>
     </div>
-
+    <div class="col"></div>
 <?php
 $this->Javascript->setInline('
     $(document).ready(function() {
