@@ -1,22 +1,14 @@
-				<!--
-                <div class="col-md-4 col-sm-6 col-md-offset-1">
-
-                    <hr />
-                </div>
-                -->
                 <div class="col">
-                <!--col-12 col-md-6 ml-md-auto-->
                 </div>
-                <div class="col-md-4 col-sm-6 col-md-offset-1">
-                    <div class="panel panel-blesta">
-                        <div class="panel-header text-center">
-                          <h2 class="panel-title"><i class="fas fa-lock"></i> <?php (print (isset($company->name) ? $this->Html->safe($company->name) : null));?></h2>
-                          <h4><?php $this->_('ClientLogin.index.login_heading');?></h4>
+                <div class="col-md-4 col-sm-6 col-md-offset-1 text-black">
+                    <div class="card panel-blesta">
+                        <div class="card-header">
+                          <h4 class="card-title"><i class="fas fa-lock"></i>  <?php $this->_('ClientLogin.index.login_heading');?></h4>
                           <p>
-                          <?php // $this->_('ClientLogin.index.description');?>
+                          <?php $this->_('ClientLogin.index.description');?>
                           </p>                        
                         </div>
-                        <div class="panel-body">
+                        <div class="card-body">
                             <?php echo (isset($message) ? $message : null);?>
 
                             <?php
@@ -64,12 +56,12 @@
                             $this->Form->end();
                             ?>
                         </div>
-                        <div class="panel-footer">
+                        <div class="card-footer">
                             <a href="<?php echo $this->Html->safe($this->base_uri . 'login/reset/');?>"><?php $this->_('ClientLogin.index.link_resetpassword');?></a>
                             <a href="<?php echo $this->Html->safe($this->base_uri . 'login/forgot/');?>" class="d-block float-xl-right"><?php $this->_('ClientLogin.index.link_forgotusername');?></a>
                         </div>
                     </div>
-                </div><div class="col"></div>
+                </div>
 
 <?php
 $this->Javascript->setInline('
