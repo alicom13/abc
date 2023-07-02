@@ -29,7 +29,7 @@ $html_lang = (!empty($language) ? substr($language, 0, 2) : 'en');
     <link href="<?php echo $this->view_dir;?>blesta/css/blesta.min.css" rel="stylesheet" type="text/css" />
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="<?php echo $this->view_dir;?>atlantis/abc/css/abc.css">
+	<link rel="stylesheet" href="<?php echo $this->view_dir;?>abc/css/abc.css">
     
     
     <!--[if lt IE 10]>
