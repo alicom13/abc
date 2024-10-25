@@ -1,72 +1,85 @@
-                <div class="col">
-                </div>
-                <div class="col-md-4 col-sm-6 col-md-offset-1 text-black">
-                    <div class="card panel-blesta">
-                        <div class="card-header">
-                          <h4 class="card-title"><i class="fas fa-lock"></i>  <?php $this->_('ClientLogin.index.login_heading');?></h4>
-                          <p>
-                          <?php $this->_('ClientLogin.index.description');?>
-                          </p>                        
-                        </div>
-                        <div class="card-body">
-                            <?php echo (isset($message) ? $message : null);?>
-
+    <div class="row g-0 justify-content-center mw-100 h-100 m-0">
+    	<div class="col-12 col-md-7 bg-light d-none d-md-block">
+        	<div class="justify-content-center">
+            </div>
+        </div>
+        <div class="col-12 col-md-5 bg-success h-100">
+        	<div class="container py-5">
+				<div class="card mx-auto shadow" style="max-width: 18rem;border :2px inset gold">
+					<!--isi-->
+				<?php echo (isset($message) ? $message : null);?>
+				<?php
+				$this->Form->create(null, ['class' => 'disable-on-submit']);
+				if ((isset($vars->forward_to) ? $vars->forward_to : null)) {
+					$this->Form->fieldHidden('forward_to', $vars->forward_to);
+				}
+				?>
+				<div class="card-header">
+					<h2 class="fw-bold"><?php $this->_('ClientLogin.index.login_heading');?></h2>
+                    <p><?php $this->_('ClientLogin.index.description');?></p>
+				</div>
+				<div class="card-body">
+					<div class="form-group">
+						<?php
+						$this->Form->label($this->_('ClientLogin.index.field_username', true), 'login_username');
+						$this->Form->fieldText('username', (isset($vars->username) ? $vars->username : null), ['id' => 'login_username', 'class' => 'form-control', 'placeholder' => $this->_('ClientLogin.index.field_username', true)]);
+						?>
+					</div>
+					<div class="form-group">
+						<?php
+						$this->Form->label($this->_('ClientLogin.index.field_password', true), 'login_password');
+						$this->Form->fieldPassword('password', ['id' => 'login_password', 'class' => 'form-control', 'placeholder' => $this->_('ClientLogin.index.field_password', true)]);
+						?>
+					</div>
+                    <div class="checkbox">
+                        <label for="login_remember_me">
                             <?php
-                            $this->Form->create(null, ['class' => 'disable-on-submit']);
-                            if ((isset($vars->forward_to) ? $vars->forward_to : null)) {
-                                $this->Form->fieldHidden('forward_to', $vars->forward_to);
-                            }
+                            $this->Form->fieldCheckbox('remember_me', 'true', (isset($vars->remember_me) ? $vars->remember_me : false), ['id' => 'login_remember_me']);
+                            $this->_('ClientLogin.index.field_rememberme');
                             ?>
-                            <fieldset>
-                                <div class="form-group">
-                                    <?php
-                                    $this->Form->label($this->_('ClientLogin.index.field_username', true), 'login_username');
-                                    $this->Form->fieldText('username', (isset($vars->username) ? $vars->username : null), ['id' => 'login_username', 'class' => 'form-control', 'placeholder' => $this->_('ClientLogin.index.field_username', true)]);
-                                    ?>
-                                </div>
-                                <div class="form-group">
-                                    <?php
-                                    $this->Form->label($this->_('ClientLogin.index.field_password', true), 'login_password');
-                                    $this->Form->fieldPassword('password', ['id' => 'login_password', 'class' => 'form-control', 'placeholder' => $this->_('ClientLogin.index.field_password', true)]);
-                                    ?>
-                                </div>
-                                <div class="checkbox">
-                                    <label for="login_remember_me">
-                                        <?php
-                                        $this->Form->fieldCheckbox('remember_me', 'true', (isset($vars->remember_me) ? $vars->remember_me : false), ['id' => 'login_remember_me']);
-                                        $this->_('ClientLogin.index.field_rememberme');
-                                        ?>
-                                    </label>
-                                </div>
-                                <?php
-                                if ((isset($captcha) ? $captcha : null)) {
-                                    ?>
-                                    <div class="form-group">
-                                        <?php echo $captcha;?>
-                                    </div>
-                                    <?php
-                                }
-                                ?>
-                                <button type="submit" class="btn btn-success btn-block"><i class="fas fa-sign-in-alt-alt"></i> <?php $this->_('ClientLogin.index.field_loginsubmit');?></button>
-                                <?php
-                                $this->Form->fieldSubmit('login', '', ['class' => 'hidden', 'hidefocus' => 'true']);
-                                ?>
-                            </fieldset>
-                            <?php
-                            $this->Form->end();
-                            ?>
-                        </div>
-                        <div class="card-footer">
-                            <a href="<?php echo $this->Html->safe($this->base_uri . 'login/reset/');?>"><?php $this->_('ClientLogin.index.link_resetpassword');?></a>
-                            <a href="<?php echo $this->Html->safe($this->base_uri . 'login/forgot/');?>" class="d-block float-xl-right"><?php $this->_('ClientLogin.index.link_forgotusername');?></a>
-                        </div>
+                        </label>
                     </div>
-                </div>
+					<?php
+					if ((isset($captcha) ? $captcha : null)) {
+						?>
+						<div class="form-group">
+							<?php echo $captcha;?>
+						</div>
+						<?php
+					}
+					?>
+					<button type="submit" class="btn btn-success btn-sm btn-block"><i class="fas fa-sign-in-alt"></i> <?php $this->_('ClientLogin.index.field_loginsubmit');?></button>
+					<?php
+					$this->Form->fieldSubmit('login', '', ['class' => 'hidden', 'hidefocus' => 'true']);
+					?>
+				</div>
+				<?php
+				$this->Form->end();
+				?>
+				<div class="card-footer">
+					<a href="<?php echo $this->Html->safe($this->base_uri . 'login/reset/');?>"><?php $this->_('ClientLogin.index.link_resetpassword');?></a>
+					<a href="<?php echo $this->Html->safe($this->base_uri . 'login/forgot/');?>" class="d-block float-xl-right"><?php $this->_('ClientLogin.index.link_forgotusername');?></a>
+                    <br><span class="text-small">&copy; <?php (print (isset($company->name) ? $this->Html->safe($company->name) : null));?></span>
+				</div>
+				<!--/isi-->
+				</div>
+            </div>
+    
+        </div>
+    </div>
 
 <?php
 $this->Javascript->setInline('
 	$(document).ready(function() {
 		$("#login_username").focus();
 	});
+    $(document).ready(function() {
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+            });
+        }, 4000);
+    });    
+    
 ');
 ?>
