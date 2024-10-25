@@ -1,12 +1,15 @@
-
-    <div class="col"></div>
-    <div class="col-md-4 col-sm-6 col-md-offset-1">
-        <div class="card panel-blesta">
-            <div class="card-content">
-				<div class="card-header">
-					<h4 class="card-title"><i class="fas fa-lock"></i>  <?php $this->_('ClientLogin.reset.reset_heading');?></h4>
-					<p><?php $this->_('ClientLogin.reset.description');?></p>
-				</div>
+    <div class="row g-0 justify-content-center mw-100 h-100 m-0">
+    	<div class="col-12 col-md-7 bg-light d-none d-md-block">
+        	<div class="justify-content-center">
+            </div>
+        </div>
+        <div class="col-12 col-md-5 bg-success h-100">
+        <div class="container py-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4><?php $this->_('ClientLogin.reset.reset_heading');?></h4>
+                    <p><?php $this->_('ClientLogin.reset.description');?></p>                
+                </div>
                 <div class="card-body">
                     <?php echo (isset($message) ? $message : null);?>
 
@@ -40,10 +43,14 @@
                     $this->Form->end();
                     ?>
                 </div>
+                <div class="card-footer">
+                    <span class="text-small">&copy; <?php (print (isset($company->name) ? $this->Html->safe($company->name) : null));?><s/pan>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col"></div>
+    </div>
+
 <?php
 $this->Javascript->setInline('
     $(document).ready(function() {
