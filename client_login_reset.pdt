@@ -12,7 +12,6 @@
                 </div>
                 <div class="card-body">
                     <?php echo (isset($message) ? $message : null);?>
-
                     <?php
                     $this->Form->create(null, ['class' => 'disable-on-submit']);
                     ?>
@@ -55,6 +54,11 @@
 $this->Javascript->setInline('
     $(document).ready(function() {
         $("#login_username").focus();
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+            });
+        }, 4000);
     });
 ');
 ?>
