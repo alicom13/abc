@@ -16,9 +16,9 @@
 				?>
 				<div class="card-header">
 					<h2 class="fw-bold"><?php $this->_('ClientLogin.index.login_heading');?></h2>
-                    <p><?php $this->_('ClientLogin.index.description');?></p>
 				</div>
 				<div class="card-body">
+				    <p><?php $this->_('ClientLogin.index.description');?></p>
 					<div class="form-group">
 						<?php
 						$this->Form->label($this->_('ClientLogin.index.field_username', true), 'login_username');
@@ -59,7 +59,7 @@
 				<div class="card-footer">
 					<a href="<?php echo $this->Html->safe($this->base_uri . 'login/reset/');?>"><?php $this->_('ClientLogin.index.link_resetpassword');?></a>
 					<a href="<?php echo $this->Html->safe($this->base_uri . 'login/forgot/');?>" class="d-block float-xl-right"><?php $this->_('ClientLogin.index.link_forgotusername');?></a>
-                    <br><span class="text-small">&copy; <?php (print (isset($company->name) ? $this->Html->safe($company->name) : null));?></span>
+                    <br><span class="text-small">&copy; <a href="<?php echo $this->Html->safe(WEBDIR);?>" class="text-small"><?php (print (isset($company->name) ? $this->Html->safe($company->name) : null));?></a></span>
 				</div>
 				<!--/isi-->
 				</div>
@@ -73,13 +73,10 @@ $this->Javascript->setInline('
 	$(document).ready(function() {
 		$("#login_username").focus();
 	});
-    $(document).ready(function() {
         window.setTimeout(function() {
             $(".alert").fadeTo(500, 0).slideUp(500, function(){
                 $(this).remove();
             });
         }, 4000);
-    });    
-    
 ');
 ?>
