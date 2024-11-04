@@ -8,9 +8,9 @@
             <div class="card">
                 <div class="card-header">
                     <h4><?php $this->_('ClientLogin.reset.reset_heading');?></h4>
-                    <p><?php $this->_('ClientLogin.reset.description');?></p>                
                 </div>
                 <div class="card-body">
+                    <p><?php $this->_('ClientLogin.reset.description');?></p>
                     <?php echo (isset($message) ? $message : null);?>
                     <?php
                     $this->Form->create(null, ['class' => 'disable-on-submit']);
@@ -43,7 +43,7 @@
                     ?>
                 </div>
                 <div class="card-footer">
-                    <span class="text-small">&copy; <?php (print (isset($company->name) ? $this->Html->safe($company->name) : null));?><s/pan>
+                	<span class="text-small"><a href="<?php echo $this->Html->safe(WEBDIR);?>">&copy; <?php (print (isset($company->name) ? $this->Html->safe($company->name) : null));?></a></span>
                 </div>
             </div>
         </div>
