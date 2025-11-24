@@ -1,1 +1,212 @@
 
+/* Custom Sidebar Styles for Blesta + Atlantis Integration */
+
+/* Main Panel Spacing */
+.main-panel {
+    margin-left: 250px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Sidebar Active States */
+.sidebar .nav-primary .nav-item.active > a {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.sidebar .nav-collapse li.active a {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.sidebar .nav-collapse li.active a .sub-item {
+    color: #fff;
+}
+
+/* User Section Styling */
+.user .info .nav {
+    margin-top: 10px;
+}
+
+.user .info .nav li {
+    margin-bottom: 0;
+}
+
+.user .info .nav li a {
+    display: block;
+    padding: 8px 15px;
+    color: #bdc3c7;
+    font-size: 13px;
+    transition: all 0.3s;
+    border-radius: 3px;
+}
+
+.user .info .nav li a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    text-decoration: none;
+}
+
+.user .info .nav li a .link-collapse {
+    margin-left: 5px;
+}
+
+/* Submenu Styling */
+.nav-collapse {
+    background: rgba(0, 0, 0, 0.1);
+    margin: 0;
+    padding: 10px 0;
+}
+
+.nav-collapse li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-collapse li a {
+    display: block;
+    padding: 8px 20px 8px 50px;
+    color: #bdc3c7;
+    font-size: 13px;
+    transition: all 0.3s;
+}
+
+.nav-collapse li a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-collapse li.active a {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+/* Quick Actions Responsive */
+@media (max-width: 576px) {
+    .quick-actions-items .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* Language Switcher */
+.language-selector {
+    padding: 0 20px;
+}
+
+#sidebar_language_switcher {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+#sidebar_language_switcher:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+/* Staff Badge Positioning */
+.staff-badge {
+    position: relative;
+    z-index: 1001;
+}
+
+/* Content Area Adjustments */
+.lmn {
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.lmn-hd {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e8e8e8;
+    background: #f8f9fa;
+}
+
+.lmn-hd h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.lmn-bd {
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .main-panel {
+        margin-left: 0;
+    }
+    
+    .sidebar:not(.sidebar-mini) {
+        transform: translateX(-100%);
+    }
+    
+    .sidebar.sidebar-mini .sidebar-content {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .lmn-hd {
+        padding: 12px 15px;
+    }
+    
+    .lmn-bd {
+        padding: 15px;
+    }
+    
+    .list-group-item {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+/* Blesta Specific Overrides */
+.list-group-item.active {
+    background-color: #5867dd;
+    border-color: #5867dd;
+}
+
+.badge-warning {
+    background-color: #ffa800;
+    color: #fff;
+}
+
+.badge-info {
+    background-color: #5578eb;
+}
+
+/* Smooth Transitions */
+.sidebar,
+.main-panel,
+.nav-item > a,
+.nav-collapse li a {
+    transition: all 0.3s ease;
+}
+
+/* Scrollbar Styling */
+.scrollbar-inner > .scroll-element .scroll-bar {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Form Controls in Sidebar */
+.sidebar .form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.sidebar .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.sidebar .form-control:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    box-shadow: none;
+}
